@@ -16,7 +16,9 @@ class Home extends StatelessWidget {
           ElevatedButton(
             onPressed: () async {
               await showModalBottomSheet(
-                // isDismissible: false,
+                constraints: BoxConstraints(
+                  maxHeight: MediaQuery.of(context).size.height * 0.8,
+                ),
                 isScrollControlled: true,
                 context: context,
                 builder: (_) => const WordTab(),
