@@ -20,6 +20,7 @@ class Home extends StatelessWidget {
                   maxHeight: MediaQuery.of(context).size.height * 0.8,
                 ),
                 isScrollControlled: true,
+                isDismissible: false,
                 context: context,
                 builder: (_) => const WordTab(),
               );
