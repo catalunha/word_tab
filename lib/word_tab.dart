@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class WordTab extends StatelessWidget {
+class WordTab extends StatefulWidget {
   const WordTab({super.key});
 
+  @override
+  State<WordTab> createState() => _WordTabState();
+}
+
+class _WordTabState extends State<WordTab> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -11,7 +16,9 @@ class WordTab extends StatelessWidget {
         // appBar: AppBar(
         //   title: const Text('titles'),
         // ),
-        body: SingleChildScrollView(
+        backgroundColor: Colors.transparent,
+        body: Container(
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
           child: Column(
             children: [
               Row(
@@ -67,9 +74,7 @@ class WordTab extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
-                height: 300,
-                color: Colors.yellow,
+              Flexible(
                 child: TabBarView(
                   children: [
                     Column(
@@ -104,7 +109,11 @@ class WordTab extends StatelessWidget {
                                           MainAxisAlignment.center,
                                       children: [
                                         ElevatedButton.icon(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            setState(() {
+                                              print('setstate');
+                                            });
+                                          },
                                           icon: const Icon(Icons.image),
                                           label: const Text('View image'),
                                         ),
@@ -123,6 +132,30 @@ class WordTab extends StatelessWidget {
                                           spacing: 10,
                                           runSpacing: 20,
                                           children: [
+                                            LexicalDataWidget(
+                                              title: 'Full gloss',
+                                              value: 'City, town',
+                                            ),
+                                            LexicalDataWidget(
+                                              title: 'Semantic domains',
+                                              value: 'Noun F S',
+                                            ),
+                                            LexicalDataWidget(
+                                              title: 'Category',
+                                              value: 'Noun',
+                                            ),
+                                            LexicalDataWidget(
+                                              title: 'Root',
+                                              value: 'Noun F S',
+                                            ),
+                                            LexicalDataWidget(
+                                              title: 'Binyan',
+                                              value: 'Noun F S',
+                                            ),
+                                            LexicalDataWidget(
+                                              title: '+++++++++',
+                                              value: '*********',
+                                            ),
                                             LexicalDataWidget(
                                               title: 'Full gloss',
                                               value: 'City, town',
